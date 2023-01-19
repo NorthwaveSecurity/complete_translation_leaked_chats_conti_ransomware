@@ -8,3 +8,11 @@ The goal of this repository is to share the translation of leaked chats related 
 
 # About us
 [Northwave security](https://northwave-security.com/) is an internationally acknowledged CERT. We are ISO 27001 and ISO 9001 certified. We are co-founders of the European Cyber Security Federation and the Dutch cyber-sector confederation “Cyberveilig Nederland”. Steven Dondorp, Northwave’s CEO, is Chairman of Cyberveilig Nederland.
+
+# How to load directly into pandas
+```
+import pandas as pd
+df_2020 = pd.read_csv('https://github.com/NorthwaveSecurity/complete_translation_leaked_chats_conti_ransomware/blob/main/jabber_chat_2020_translated.csv?raw=true',index_col=0)
+df_2021 = pd.read_csv('https://github.com/NorthwaveSecurity/complete_translation_leaked_chats_conti_ransomware/blob/main/jabber_chat_2021_2022_translated.csv?raw=true',index_col=0)
+df = pd.concat([df_2020,df_2021]).reset_index(drop=True)
+```
